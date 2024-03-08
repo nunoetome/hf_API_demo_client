@@ -1,6 +1,6 @@
 ---
 title: API Demo Client
-emoji: 👁
+emoji: 🔌👩🏻‍💻
 colorFrom: yellow
 colorTo: red
 sdk: gradio
