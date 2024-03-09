@@ -20,4 +20,4 @@ def request(text):
     return result
 
 
-io = gr.Interface(request, "textbox", "json")
+io = gr.Interface(request, "textbox", "textbox")
