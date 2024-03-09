@@ -6,14 +6,13 @@ DEBUG_MODE = True
 
 
 def request(text):
-    #result = client.echo(text, api_name="/predict")
-    #return result
+
     result = client.predict(
-		"Hello!!",	# str  in 'text' Textbox component
+        text,
 		api_name="/predict"
     )
     return result
 
-demo = gr.Interface(fn=request, inputs="textbox", outputs="textbox")
+demo = gr.Interface(fn=request, inputs="textbox", outputs="json")
     
 demo.launch(share=True)
