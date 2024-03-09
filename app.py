@@ -33,11 +33,6 @@ def get_bmc_markdown():
     return full_text
 
    
-
-def update(name):
-    #return f"Welcome to Gradio, {name}!"
-    return {"name": name}
-
 def send_request(text):
     client = Client("Nuno-Tome/API_demo_server")
     result = client.predict(
@@ -50,7 +45,7 @@ with gr.Blocks() as demo:
     
     gr.Markdown(MESAGE_HEADER)
     gr.Markdown(get_bmc_markdown())
-    #gr.DuplicateButton()
+    gr.DuplicateButton()
     
     with gr.Row():
         with gr.Column():
@@ -61,7 +56,5 @@ with gr.Blocks() as demo:
             out = gr.JSON()  
     btn = gr.Button("Send request to server")
     btn.click(fn=send_request, inputs=inp, outputs=out)
-      
-    
-        
+ 
 demo.launch(share=True)
