@@ -42,15 +42,15 @@ def send_request(text):
     return result
 
 with gr.Blocks() as demo:
-    
+  
     gr.Markdown(MESAGE_HEADER)
-    gr.Markdown(get_bmc_markdown())
     gr.DuplicateButton()
-    
+    gr.Markdown(get_bmc_markdown())
+     
     with gr.Row():
         with gr.Column():
             gr.Markdown("**Type your message:**")
-            inp = gr.Textbox(placeholder="What is your name?")
+            inp = gr.TextArea(placeholder="What is your name?")
         with gr.Column():
             gr.Markdown("**This is your gradio api request response:**")
             out = gr.JSON()  
