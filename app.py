@@ -9,10 +9,10 @@ def request(text):
     if DEBUG_MODE:
         gr.Markdown("client:" + str(client))
         gr.Markdown(f"## Requesting prediction for: {text}")
-    result = client.predict(
+    result = client.echo(
 		"Hello World",	# str  in 'text' Textbox component
         #text,
-		api_name="/predict"
+		api_name="/echo"
     )
     if DEBUG_MODE:
         gr.Markdown(f"## Prediction result: {result}")
