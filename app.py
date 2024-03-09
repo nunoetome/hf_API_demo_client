@@ -1,4 +1,5 @@
 import gradio as gr
+from gradio_client import Client
 
 def greet(name):
     return "Hello " + name + "!"
