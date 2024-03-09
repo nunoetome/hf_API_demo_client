@@ -1,8 +1,18 @@
+import gradio as gr
 from gradio_client import Client
 
 client = Client("Nuno-Tome/API_demo_server")
-result = client.predict(
-		"Hello!!",	# str  in 'text' Textbox component
+DEBUG_MODE = True
+
+
+def request(text):
+
+    result = client.predict(
+        text,
 		api_name="/predict"
-)
-print(result)
+    )
+    return result
+
+demo = gr.Interface(fn=request, inputs="textbox", outputs="json")
+    
+demo.launch(share=True)
