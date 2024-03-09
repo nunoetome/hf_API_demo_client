@@ -10,8 +10,8 @@ def request(text):
         gr.Markdown("client:" + str(client))
         gr.Markdown(f"## Requesting prediction for: {text}")
     result = client.predict(
-		#"Hello World",	# str  in 'text' Textbox component
-        text,
+		"Hello World",	# str  in 'text' Textbox component
+        #text,
 		api_name="/predict"
     )
     if DEBUG_MODE:
@@ -20,4 +20,4 @@ def request(text):
     return result
 
 
-io = gr.Interface(request, "textbox", "textbox")
+io = gr.Interface(request, "textbox", "json")
